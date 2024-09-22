@@ -114,12 +114,13 @@ h1 a {
 @media screen and (min-width: 768px) {
     main {
         display: flex;
+        flex-direction: column;
         align-items: center;
     }
 
     article {
         display: flex;
-        position:relative;
+        align-items: flex-start;
         max-width: 800px;
     }
 
@@ -131,8 +132,8 @@ h1 a {
     nav ul li{
         flex-direction: row;
     }
-    h2.post-date{
-        border-bottom: 1px solid #d0d0d0;
-
+    p{
+        display: f;
+        padding-left: 50px;
     }
 }
