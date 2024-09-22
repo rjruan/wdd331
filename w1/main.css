@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+body {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+h1, h2 {
+    font-family: 'Lora', serif;
+}
+
+h1 {
+    font-size: 5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.post-content p {
+    border-bottom: 1px solid #d0d0d0;
+    margin-left: -3em;
+    padding-bottom: 50px; /* Adds space between text and border */
+  }
+  
+nav ul {
+    border-top: 1px solid #d0d0d0;
+    border-bottom: 1px solid #d0d0d0;
+    list-style-type: none;
+    margin-right: 25px;
+    margin-left: 25px;
+    font-size: 1.3rem;
+    text-align: right;
+    text-transform: uppercase;
+}
+
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    font-family: 'Lora', serif;
+    color: #666;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: #00ddff;
+}
+
+nav ul li a:active {
+    color: #DEB887;
+}
+
+nav ul li a:visited {
+    color: #666;
+}
+main {
+    padding: 20px;
+    
+}
+
+article {
+    display: flex;
+    align-items: flex-start;
+    max-width: 800px;
+    position: relative;
+
+}
+
+/* Vertical line */
+article::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 120px; 
+    width: 1px;
+    background-color: #d0d0d0;
+}
+
+h2.post-date {
+    color: #666;
+    font-size: 1rem;
+    font-style: italic;
+    text-transform: uppercase;
+    margin-right: 20px;
+    min-width: 80px; /* Ensures date area width */
+    text-align: right;
+}
+.post-content {
+    flex-grow: 1;
+    padding-left: 50px;
+}
+.post-content img {
+    width: 100%;
+    max-width: 200px;
+    margin-right: 20px;
+}
+
+/* Title link (no hov change) */
+h1 a {
+    text-decoration: none;
+    color: #333;
+}
+  
+/* Responsive Layout */
+@media screen and (min-width: 768px) {
+    main {
+        display: flex;
+        align-items: center;
+    }
+
+    article {
+        display: flex;
+        position:relative;
+        max-width: 800px;
+    }
+
+    .post-content img {
+        margin-right: 20px;
+        width: auto;
+        max-width: 150px;
+    }
+    nav ul li{
+        flex-direction: row;
+    }
+    h2.post-date{
+        border-bottom: 1px solid #d0d0d0;
+
+    }
+}
