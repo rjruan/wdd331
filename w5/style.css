@@ -1,64 +1,96 @@
-/* Reset basic styling */
-* {
+/* General body styling */
+body {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    color: #333;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-  }
-  
-  /* Main container for the grid */
-  .card-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  /* Styling for the row-grid and col-grid */
-  .row-grid, .col-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 fixed columns */
-    gap: 20px; /* Space between cards */
-  }
-  
-  /* Styling for the individual cards */
-  .card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-  }
-  
-  /* Image styling to fit the card width */
-  .card img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-  
-  /* Ensure the card title is visible and styled properly */
-  .card h2 {
-    font-size: 16px;
-    color: #333;
-    background-color: #f9f9f9;
-    width: 100%;
+}
+
+h1, h2 {
+    font-family: 'Lora', serif;
+}
+
+/* Main heading */
+h1 {
+    font-size: 5rem;
+    font-weight: 600;
     text-align: center;
-    padding: 10px;
-    margin-top: auto;
-    display: block;
-  }
-  
+    margin-bottom: 10px;
+}
+
+/* Subheading */
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+/* Styling for each article */
+article {
+    display: flex;
+    align-items: center; /* Align items in a row */
+    max-width: 800px;
+    margin-bottom: 40px; /* Space between articles */
+    border-bottom: 1px solid #d0d0d0;
+}
+
+/* Date styling */
+h2.post-date {
+    color: #666;
+    font-size: 1rem;
+    font-style: italic;
+    text-transform: uppercase;
+    margin-right: 20px; /* Space between date and line */
+    white-space: nowrap; /* Ensures date stays on one line */
+    min-width: 120px; /* Consistent width for the date section */
+    text-align: right;
+    position: relative; /* For positioning the vertical line */
+}
+
+/* Vertical line next to post date */
+h2.post-date::after {
+    content: '';
+    position: absolute;
+    right: -10px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: #d0d0d0;
+}
+
+/* Post content (title, text, image) */
+.post-content {
+    display: flex;
+    flex-direction: row; /* Align image and text in one row */
+    align-items: center;
+    padding-left: 20px; /* Space between content and line */
+}
+
+.post-content img {
+    max-width: 150px; /* Image size */
+    margin-right: 20px; /* Space between image and text */
+}
+
+.post-content p {
+    margin: 0;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    article {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    h2.post-date {
+        margin-bottom: 10px; /* Adds space in mobile view */
+        position: static;
+    }
+
+    h2.post-date::after {
+        display: none; /* Hide the vertical line on mobile */
+    }
+
+    .post-content {
+        padding-left: 0;
+    }
+}

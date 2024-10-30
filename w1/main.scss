@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+// Variables
+$font-primary: 'Helvetica', 'Arial', sans-serif;
+$font-secondary: 'Lora', serif;
+$color-primary: #333;
+$color-secondary: #666;
+$color-highlight: #00ddff;
+$color-active: #DEB887;
+$border-color: #d0d0d0;
+$line-height: 1.1;
+
+// Mixins
+@mixin center-text {
+  display: block;
+  text-align: center;
+}
+
+// Base Styles
+body {
+  font-family: $font-primary;
+  color: $color-primary;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2 {
+  font-family: $font-secondary;
+}
+
+h1 {
+  font-size: 5rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 10px;
+  line-height: $line-height;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+// Separate lines for "Kids Read" and "For Fun"
+.title-line-1 {
+  @include center-text;
+}
+
+.title-line-2 {
+  @include center-text;
+  margin-top: -10px;
+}
+
+.post-content {
+  p {
+    border-bottom: 1px solid $border-color;
+    padding-bottom: 50px;
+    margin: 0;
+    color: $color-secondary;
+  }
+}
+
+nav {
+  ul {
+    border-top: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1.3rem;
+    @include center-text;
+    text-transform: uppercase;
+
+    li {
+      display: inline-block;
+      margin: 0 10px;
+
+      a {
+        font-family: $font-secondary;
+        color: $color-secondary;
+        text-decoration: none;
+
+        &:hover {
+          color: $color-highlight;
+        }
+
+        &:active {
+          color: $color-active;
+        }
+
+        &:visited {
+          color: $color-secondary;
+        }
+      }
+    }
+  }
+}
+
+main {
+  padding: 20px;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+
+  // Vertical line
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50px;
+    width: 1px;
+    background-color: $border-color;
+    display: none; // Hide vertical line on smaller screens
+  }
+}
+
+h2.post-date {
+  color: $color-secondary;
+  font-size: 1rem;
+  font-style: italic;
+  text-transform: uppercase;
+  @include center-text;
+  margin: 10px 0;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 80%;
+    height: 1px;
+    background-color: $border-color;
+    margin: 5px auto;
+  }
+}
+
+.post-content {
+  @include center-text;
+
+  img {
+    width: 100%;
+    max-width: 200px;
+    margin: 10px 0;
+  }
+}
+
+// Title link (no hover change)
+h1 a {
+  text-decoration: none;
+  color: $color-primary;
+}
+
+// Responsive Layout
+@media screen and (max-width: 767px) {
+  // Adjust title and navigation for smaller screens
+  h1 {
+    font-size: 3rem;
+    width: 768px;
+    overflow-wrap: break-word;
+  }
+
+  nav ul {
+    @include center-text;
+    display: block;
+
+    li {
+      display: block;
+      margin: 5px 0;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  article {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    max-width: 768px;
+
+    &::before {
+      display: block; // Show vertical line on larger screens
+    }
+  }
+
+  .post-content {
+    text-align: left;
+    padding-left: 50px;
+
+    img {
+      margin-right: 20px;
+      width: auto;
+      max-width: 150px;
+    }
+  }
+
+  nav ul {
+    text-align: right;
+  }
+
+  h2.post-date {
+    min-width: 80px; // Ensures the date area does not overlap
+    text-align: right;
+    margin-right: 20px;
+  }
+}

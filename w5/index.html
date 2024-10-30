@@ -1,18 +1,103 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="./style.css" />
-    <script src="./main.js" defer></script>
+    <meta charset="utf-8" >
+    <title>Kids Read for Fun | Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" >
+    <link rel="stylesheet" type="text/css" href="main.css" >
   </head>
+
   <body>
-    <header></header>
-    <main class="card-grid">
-      <section class="row-grid"></section>
-      <section class="col-grid"></section>
-    </main>
-  </body>
+    <div>
+      <header>
+        <h1><a href="#">Kids Read for Fun</a></h1>
+
+        <nav>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Current Reviews</a></li>
+            <li><a href="#">Archive</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <article>
+          <h2 class="post-date">January 6, 2016</h2>
+          <section class="post-content">
+            <h2><a href="#">Septimus Heap Book One: Magyk</a></h2>
+            <figure>
+              <img
+                src="https://upload.wikimedia.org/wikipedia/en/5/5f/Magkycover2.jpg"
+                alt="Book cover for Septimus Heap 1"
+              >
+            </figure>
+            <p>
+              If you enjoy stories about seventh sons of seventh sons and magyk
+              this is the book for you. <a href="#">Read More...</a>
+            </p>
+          </section>
+        </article>
+
+        <article>
+          <h2 class="post-date">Dec 20, 2015</h2>
+          <section class="post-content">
+            <h2><a href="#">Magnus Chase Book One: Sword of Summer</a></h2>
+            <figure>
+              <img
+                src="https://books.google.com/books/content/images/frontcover/xWuyBAAAQBAJ?fife=w300"
+                alt="Book cover for Magnus Chase 1"
+              >
+            </figure>
+            <p>
+              The anticipated new novel by Rick Riordan. After Greek mythology
+              (Percy Jackson), Greek/Roman (Heroes of Olympus), and Egyptian
+              (Kane Chronicles), Rick decides to try his hand with Norse
+              Mythology, and the end result is good.
+              <a href="#">Read More...</a>
+            </p>
+          </section>
+        </article>
+      </main>
+    </div>
+  <!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
 </html>
